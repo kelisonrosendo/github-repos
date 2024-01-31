@@ -16,7 +16,7 @@ import { Follower } from "./follower";
 import { Following } from "./following";
 
 export function Home() {
-  const [userName] = useState("diego3g");
+  const [userName] = useState("kelisonrosendo");
 
   const { data: userData } = useQuery({
     queryKey: ["user", userName],
