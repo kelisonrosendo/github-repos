@@ -14,7 +14,7 @@ export function Following({ userName }: UserNameProps) {
   return (
     <div>
       {followingData?.map((following) => (
-        <div key={following.id}>{following.name}</div>
+        <div key={following.id}>{following.login}</div>
       ))}
     </div>
   );
