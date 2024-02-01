@@ -40,7 +40,13 @@ export function UserHeader(userData: UserDataResponse) {
       <div className=" flex flex-col gap-1 text-white">
         <h1 className="font-semibold text-lg">
           {userData.name}
-          <span className="ml-2 opacity-60">({userData.login})</span>
+          <a
+            href={userData.html_url}
+            target="_blank"
+            className="ml-2 opacity-60 hover:opacity-40"
+          >
+            ({userData.login})
+          </a>
         </h1>
 
         {userData.bio && (
