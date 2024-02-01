@@ -1,14 +1,11 @@
+import { UserNameProp } from "@/types/user";
 import { useQuery } from "@tanstack/react-query";
 import { getFollowingData } from "@/api/get-following-data";
 
-interface UserNameProps {
-  userName: string;
-}
-
-export function Following({ userName }: UserNameProps) {
+export function Following({ userName }: UserNameProp) {
   const { data: followingData } = useQuery({
     queryKey: ["following", userName],
-    queryFn: () => getFollowingData({ userName }),
+    queryFn: () => getFollowingData(userName),
   });
 
   return (

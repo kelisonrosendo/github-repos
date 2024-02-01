@@ -1,20 +1,8 @@
 import { api } from "@/lib/axios";
+import { RepoDataResponse } from "@/types/repo";
 
-export interface GetRepoDataParams {
-  userName: string;
-}
-
-export interface GetRepoDataResponse {
-  id: number;
-  name: string;
-  html_url: string;
-  watchers: number;
-  forks: number;
-  stargazers_count: number;
-}
-
-export async function getRepoData({ userName }: GetRepoDataParams) {
-  const response = await api.get<GetRepoDataResponse[]>(
+export async function getRepoData(userName: string) {
+  const response = await api.get<RepoDataResponse[]>(
     `/users/${userName}/repos`
   );
 

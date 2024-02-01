@@ -1,4 +1,4 @@
-import { GetUserDataResponse } from "@/api/get-user-data";
+import { UserDataResponse } from "@/types/user";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import {
@@ -9,7 +9,7 @@ import {
 } from "./ui/tooltip";
 import { ArrowsClockwise, MapPin } from "@phosphor-icons/react";
 
-export function UserHeader(userData: GetUserDataResponse) {
+export function UserHeader(userData: UserDataResponse) {
   return (
     <>
       <div className="relative">

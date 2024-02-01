@@ -1,15 +1,12 @@
+import { UserNameProp } from "@/types/user";
 import { useQuery } from "@tanstack/react-query";
 import { getRepoData } from "@/api/get-repo-data";
 import { Eye, GitFork, Star } from "@phosphor-icons/react";
 
-interface UserNameProps {
-  userName: string;
-}
-
-export function Repo({ userName }: UserNameProps) {
+export function Repo({ userName }: UserNameProp) {
   const { data: repoData } = useQuery({
     queryKey: ["repo", userName],
-    queryFn: () => getRepoData({ userName }),
+    queryFn: () => getRepoData(userName),
   });
 
   return (

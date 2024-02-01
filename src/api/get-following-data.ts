@@ -1,18 +1,8 @@
 import { api } from "@/lib/axios";
+import { FollowingDataResponse } from "@/types/following";
 
-export interface GetFollowingDataParams {
-  userName: string;
-}
-
-export interface GetFollowingDataResponse {
-  id: number;
-  avatar_url: string;
-  login: string;
-  html_url: string;
-}
-
-export async function getFollowingData({ userName }: GetFollowingDataParams) {
-  const response = await api.get<GetFollowingDataResponse[]>(
+export async function getFollowingData(userName: string) {
+  const response = await api.get<FollowingDataResponse[]>(
     `/users/${userName}/following`
   );
 

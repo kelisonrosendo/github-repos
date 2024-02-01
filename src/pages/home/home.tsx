@@ -5,24 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { UserHeader } from "@/components/user-header";
 import { TabCardContent } from "@/components/tab-card-content";
 
-export interface UserData {
-  name: string;
-  bio: string;
-  location: string;
-  avatar_url: string;
-  created_at: string;
-  html_url: string;
-  public_repos: number;
-  followers: number;
-  following: number;
-}
-
 export function Home() {
   const [userName] = useState<string>("kelisonrosendo");
 
   const { data: userData } = useQuery({
     queryKey: ["user", userName],
-    queryFn: () => getUserData({ userName }),
+    queryFn: () => getUserData(userName),
   });
 
   return (

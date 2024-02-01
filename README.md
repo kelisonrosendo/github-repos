@@ -8,7 +8,7 @@ o conhecimento das tipagem usando o Typescript.
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Vue3 + Vite + Typescript](https://vuejs.org/guide/typescript/composition-api.html)
-- [Layout: Shadcn + Tailwind](https://www.shadcn-vue.com/examples/dashboard.html)
+- [Shadcn + Tailwind](https://ui.shadcn.com/)
 - [Tanstack Query](https://tanstack.com/query/latest)
 
 Api utilizada pra os testes:

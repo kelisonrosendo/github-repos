@@ -1,7 +1,7 @@
+import { UserDataResponse } from "@/types/user";
 import { Repo } from "@/pages/home/repo";
 import { Follower } from "@/pages/home/follower";
 import { Following } from "@/pages/home/following";
-import { GetUserDataResponse } from "@/api/get-user-data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
 import { GitFork, PersonSimpleRun, ThumbsUp } from "@phosphor-icons/react";
@@ -14,7 +14,7 @@ export interface TabProp {
   content: React.ReactElement;
 }
 
-export function TabCardContent(userData: GetUserDataResponse) {
+export function TabCardContent(userData: UserDataResponse) {
   const tabs: TabProp[] = [
     {
       key: "repos",
