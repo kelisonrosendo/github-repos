@@ -1,8 +1,8 @@
 import { api } from "@/lib/axios";
-import { FollowerDataResponse } from "@/types/follower";
+import { UserDataResponse } from "@/types/user";
 
 export async function getFollowerData(userName: string) {
-  const response = await api.get<FollowerDataResponse[]>(
+  const response = await api.get<UserDataResponse[]>(
     `/users/${userName}/followers`
   );
 

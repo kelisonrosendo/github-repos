@@ -1,6 +1,7 @@
 import { UserNameProp } from "@/types/user";
 import { useQuery } from "@tanstack/react-query";
 import { getFollowerData } from "@/api/get-follower-data";
+import { ListUserRepo } from "@/components/list-user-repo";
 
 export function Follower({ userName }: UserNameProp) {
   const { data: followerData, isPending } = useQuery({
@@ -13,11 +14,11 @@ export function Follower({ userName }: UserNameProp) {
       {isPending ? (
         "carregando"
       ) : (
-        <div>
+        <>
           {followerData?.map((follower) => (
-            <div key={follower.id}>{follower.login}</div>
+            <ListUserRepo {...follower} key={follower.id} />
           ))}
-        </div>
+        </>
       )}
     </>
   );
