@@ -14,7 +14,7 @@ export function ListUserRepo(user: UserDataResponse) {
 
         <a
           href={user.html_url}
-          target="blank"
+          target="_blank"
           className="font-light hover:text-violet-500"
         >
           {user.html_url}

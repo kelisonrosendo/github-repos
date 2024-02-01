@@ -12,7 +12,7 @@ export function Follower({ userName }: UserNameProp) {
   return (
     <>
       {isPending ? (
-        "carregando"
+        "Carregando..."
       ) : (
         <>
           {followerData?.map((follower) => (

@@ -57,7 +57,9 @@ export function TabCardContent(userData: UserDataResponse) {
 
       {tabs.map((tab) => (
         <TabsContent value={tab.key} key={tab.key}>
-          <ScrollArea className="h-screen pr-6">{tab.content}</ScrollArea>
+          <ScrollArea className="pr-6 overflow-auto h-[calc(100vh-367px)]">
+            {tab.content}
+          </ScrollArea>
         </TabsContent>
       ))}
     </Tabs>
