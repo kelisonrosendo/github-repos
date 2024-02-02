@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "react-router-dom";
 import { getUserData } from "@/api/get-user-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { UserHeader } from "@/components/user-header";
 import { TabCardContent } from "@/components/tab-card-content";
 
 export function Home() {
-  const [userName] = useState<string>("kelisonrosendo");
+  const [userName, setUserName] = useState<string>("kelisonrosendo");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("user")) {
+      setUserName(searchParams.get("user") || "");
+    } else {
+      setSearchParams((state) => {
+        state.set("user", "kelisonrosendo");
+
+        return state;
+      });
+    }
+  }, [searchParams, setSearchParams]);
 
   const { data: userData } = useQuery({
     queryKey: ["user", userName],
