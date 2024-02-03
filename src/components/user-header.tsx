@@ -1,13 +1,7 @@
 import { UserDataResponse } from "@/types/user";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Button } from "./ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip";
-import { ArrowsClockwise, MapPin } from "@phosphor-icons/react";
+import { MapPin } from "@phosphor-icons/react";
+import { ChangeUserDialog } from "./change-user-dialog";
 
 export function UserHeader(userData: UserDataResponse) {
   return (
@@ -17,24 +11,8 @@ export function UserHeader(userData: UserDataResponse) {
           <AvatarImage src={userData.avatar_url} alt={userData.name} />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                size="sm"
-                variant="outline"
-                className="p-0 h-8 w-8 rounded-full absolute bottom-1 left-1"
-              >
-                <ArrowsClockwise
-                  size={18}
-                  weight="bold"
-                  className="text-violet-500"
-                />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>Trocar usuário</TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+
+        <ChangeUserDialog />
       </div>
 
       <div className=" flex flex-col gap-1 text-white">

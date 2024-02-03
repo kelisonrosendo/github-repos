@@ -10,6 +10,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Vue3 + Vite + Typescript](https://vuejs.org/guide/typescript/composition-api.html)
 - [Shadcn + Tailwind](https://ui.shadcn.com/)
 - [Tanstack Query](https://tanstack.com/query/latest)
+- [Zod, React Hook Form](https://react-hook-form.com/)
 
 Api utilizada pra os testes:
 
