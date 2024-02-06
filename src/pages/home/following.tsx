@@ -2,6 +2,7 @@ import { UserNameProp } from "@/types/user";
 import { useQuery } from "@tanstack/react-query";
 import { getFollowingData } from "@/api/get-following-data";
 import { ListUserRepo } from "@/components/list-user-repo";
+import { ListUserRepoSkeleton } from "@/components/list-user-repo-skeleton";
 
 export function Following({ userName }: UserNameProp) {
   const { data: followingData, isPending } = useQuery({
@@ -12,7 +13,7 @@ export function Following({ userName }: UserNameProp) {
   return (
     <>
       {isPending ? (
-        "Carregando..."
+        <ListUserRepoSkeleton />
       ) : (
         <>
           {followingData?.map((following) => (

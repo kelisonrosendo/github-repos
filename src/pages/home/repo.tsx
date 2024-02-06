@@ -1,6 +1,7 @@
 import { UserNameProp } from "@/types/user";
 import { useQuery } from "@tanstack/react-query";
 import { getRepoData } from "@/api/get-repo-data";
+import { RepoSkeleton } from "@/components/repo-skeleton";
 import { Eye, GitFork, Star } from "@phosphor-icons/react";
 
 export function Repo({ userName }: UserNameProp) {
@@ -12,7 +13,7 @@ export function Repo({ userName }: UserNameProp) {
   return (
     <>
       {isPending ? (
-        "Carregando..."
+        <RepoSkeleton />
       ) : (
         <div className="flex flex-col">
           {repoData?.map((repo) => (

@@ -5,6 +5,7 @@ import { getUserData } from "@/api/get-user-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { UserHeader } from "@/components/user-header";
 import { TabCardContent } from "@/components/tab-card-content";
+import { UserHeaderSkeleton } from "@/components/user-header-skeleton";
 
 export function Home() {
   const [userName, setUserName] = useState<string>("kelisonrosendo");
@@ -22,7 +23,7 @@ export function Home() {
     }
   }, [searchParams, setSearchParams]);
 
-  const { data: userData } = useQuery({
+  const { data: userData, isPending } = useQuery({
     queryKey: ["user", userName],
     queryFn: () => getUserData(userName),
   });
@@ -31,6 +32,7 @@ export function Home() {
     <div className="h-screen bg-slate-200">
       <header className="h-[250px] flex justify-center bg-violet-500">
         <div className="h-[190px] max-w-[550px] flex items-center gap-8">
+          {isPending && <UserHeaderSkeleton />}
           {userData && <UserHeader {...userData} />}
         </div>
       </header>
