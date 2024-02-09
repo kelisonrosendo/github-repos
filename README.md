@@ -1,13 +1,12 @@
 ### 💻 Projeto
 
-O projeto tem o objetivo de explorar as novas funcionalidades do Vue 3 e aprimorar
-o conhecimento das tipagem usando o Typescript.
+O projeto tem o objetivo de aprimorar os conhecimentos em React + Typescript e trata-se de uma aplicação para visualizar os dados de repositórios, seguidores e pessoas seguidas, utilizando a API pública do GitHub.
 
 ### 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [Vue3 + Vite + Typescript](https://vuejs.org/guide/typescript/composition-api.html)
+- [React + Vite + Typescript](https://vitejs.dev/guide/)
 - [Shadcn + Tailwind](https://ui.shadcn.com/)
 - [Tanstack Query](https://tanstack.com/query/latest)
 - [Zod, React Hook Form](https://react-hook-form.com/)
